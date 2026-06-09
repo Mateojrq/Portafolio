@@ -1,0 +1,138 @@
+/* === SECCIÓN PRINCIPAL ÉPICA === */
+.principal {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 1.5rem;
+}
+
+/* === IMAGEN DE MAPACHE PRINCIPAL === */
+.principal__mapache {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 15px 35px rgba(82, 103, 125, 0.4))
+            brightness(1.1)
+            contrast(1.1);
+    transition: all 0.3s ease;
+}
+
+.principal__title {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    position: relative;
+    z-index: 1;
+}
+
+.principal__title::before {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+    border-radius: 2px;
+}
+
+.principal__description {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-weight: 500;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+/* === EFECTO DE TEXTO BRILLANTE === */
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(209, 207, 201, 0.3),
+                      0 0 20px rgba(82, 103, 125, 0.2);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(209, 207, 201, 0.6),
+                      0 0 30px rgba(82, 103, 125, 0.4);
+    }
+}
+
+.principal__title {
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+/* === ANIMACIÓN DE ENTRADA === */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.principal {
+    animation: slideInUp 0.8s ease-out;
+}
+
+/* === RESPONSIVE === */
+@media (width >= 768px) {
+    .principal {
+        padding: 2rem 0;
+    }
+
+    .principal__description {
+        font-size: 1.3rem;
+        max-width: 700px;
+    }
+
+    .principal__title {
+        font-size: 3.5rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 1.5rem 0;
+    }
+
+    .principal__title::before {
+        width: 120px;
+        height: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .principal__title {
+        font-size: 1.8rem;
+    }
+
+    .principal__description {
+        font-size: 1rem;
+    }
+
+    .principal::before {
+        font-size: 60px;
+        top: -50px;
+    }
+}
+
+/* === ANIMACIÓN DE FLOTACIÓN === */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(-5deg); }
+}

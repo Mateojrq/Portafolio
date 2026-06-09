@@ -1,0 +1,253 @@
+/* === IMPORTAR FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700;900&display=swap');
+
+/* === VARIABLES GLOBALES === */
+:root {
+  --primary: #BDC4D4;           /* Ivory - Texto principal */
+  --secondary: #D1CFC9;         /* Buttercream - Acentos */
+  --dark: #0F1A2B;              /* Deep Navy - Fondos oscuros */
+  --dark-light: #1C2E4A;        /* Midnight Blue - Fondos secundarios */
+  --mid: #52677D;               /* Dusty Blue - Elementos medios */
+  --accent: #D1CFC9;            /* Buttercream */
+  --accent-bg: rgba(209, 207, 201, 0.1);
+  --accent-border: #D1CFC9;
+  --border: rgba(209, 207, 201, 0.2);
+  --text-h: #BDC4D4;
+  --social-bg: rgba(82, 103, 125, 0.3);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --portfolio: linear-gradient(135deg, #1C2E4A 0%, #0F1A2B 100%);
+}
+
+/* === RESET UNIVERSAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* === HTML Y BODY === */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0F1A2B 0%, #1C2E4A 100%);
+  color: var(--primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* === ENLACES === */
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #D1CFC9;
+}
+
+/* === HEADINGS === */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* === LISTAS === */
+ul, ol {
+  list-style: none;
+}
+
+/* === IMÁGENES === */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === BOTONES GLOBALES === */
+button,
+input[type="button"],
+input[type="submit"] {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* === INPUTS === */
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: rgba(28, 46, 74, 0.4);
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 15px rgba(209, 207, 201, 0.2);
+}
+
+/* === SCROLL BAR === */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1C2E4A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #52677D;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D1CFC9;
+}
+
+/* === SELECCIÓN === */
+::selection {
+  background: var(--secondary);
+  color: #0F1A2B;
+}
+
+/* === CLASES UTILITARIAS === */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--secondary);
+  text-transform: uppercase;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--secondary), transparent);
+  margin: 1rem auto;
+  border-radius: 2px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+
+/* === ANIMACIONES GLOBALES === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-3deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* === ACCESIBILIDAD === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
